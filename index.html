@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./rectagulos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+    <title>FigurasGeometricas</title>
+    <style>
+        #prinsipal{
+            background-color: black;
+        }
+        h1{
+            color:aqua;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size:x-large;
+            text-align: center;
+        }
+    </style>
+</head>
+<body id="prinsipal">
+    <h1>
+        FigurasGeometricas
+    </h1>
+    <script>
+        var circulo;
+        var rectangulo;
+        var arCirlcoulo=[]
+        function setup(){
+            createCanvas(windowWidth,windowHeight);
+            circulo = new Circulos();
+            rectangulo = new Rectangulo();
+            //creacione de circulo
+            for(let i=0;i<=100;i++){
+                arCirlcoulo.push(new Circulos())
+                console.log(i+"-37-");
+            }
+        }
+        function draw(){
+            background("black")
+            circulo.display();
+           // console.log("si funciona-35-");
+            rectangulo.display();
+            for(let a=0;a<=arCirlcoulo.length;a++){
+                arCirlcoulo[a].display();
+                console.log(a+"-46-");
+            }
+        }
+        class Circulos{
+            constructor(){
+                this.x=width/2;
+                this.y=height/2;
+                this.r=30;
+            }
+            display(){
+                /*color=rgb(254, 62, 62);
+                fill(color);*/
+                //fill(color(254, 62, 62));
+                var r = random(1,168);
+                var g = 248;
+                var b = random(1,50);
+                fill(r,g,b)
+                ellipse(this.x,this.y,this.r);
+                //console.log("no se atora -display 43-")
+            }
+        }
+    </script>
+</body>
+</html>
